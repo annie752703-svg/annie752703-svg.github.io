@@ -42,17 +42,18 @@
 <body class="bg-[#FBF9F5] text-stone-800 antialiased selection:bg-coffee-200">
 
   <!-- 頂部導覽列 (Sticky Navigation) -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200 shadow-sm transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <img src="logo.jpg" alt="Artisan Brew Logo" class="w-12 h-12 rounded-xl object-contain shadow-sm border border-stone-200 bg-white p-1">
-        <div>
-          <span class="text-xl font-bold tracking-tight text-coffee-900 block leading-tight">Artisan Brew & Co.</span>
-          <span class="text-xs text-coffee-600 font-medium tracking-wide">精品外帶咖啡小館 · 商業企劃系統</span>
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stone-200 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-2.5 sm:space-x-3 group">
+        <img src="logo.jpg" alt="Artisan Brew Logo" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl object-contain shadow-sm border border-stone-200 bg-white p-1 flex-shrink-0 group-hover:scale-105 transition">
+        <div class="min-w-0">
+          <span class="text-base sm:text-xl font-black tracking-tight text-coffee-900 block leading-tight truncate">Artisan Brew & Co.</span>
+          <span class="text-[11px] sm:text-xs text-coffee-600 font-medium tracking-wide block truncate">精品外帶咖啡小館 · 商業企劃</span>
         </div>
-      </div>
+      </a>
 
-      <nav class="hidden md:flex items-center space-x-7 text-sm font-semibold text-stone-600">
+      <!-- 桌面端導覽列 -->
+      <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-stone-600">
         <a href="#video-pitch" class="hover:text-coffee-600 transition flex items-center space-x-1 text-coffee-800 font-bold"><i data-lucide="play-circle" class="w-4 h-4 text-amber-600"></i><span>45秒影片</span></a>
         <a href="#summary" class="hover:text-coffee-600 transition">執行摘要</a>
         <a href="#budget" class="hover:text-coffee-600 transition">100萬預算配置</a>
@@ -62,65 +63,119 @@
         <a href="#simulator" class="hover:text-coffee-600 transition">即時模擬器</a>
       </nav>
 
-      <div class="flex items-center space-x-3">
-        <a href="https://docs.google.com/document/d/1Nri3kQFaBQLcrsEg4tCaLlyQsFmJt0x53TESfDCJF98/edit" target="_blank" class="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200 transition">
-          <i data-lucide="file-text" class="w-4 h-4 text-blue-600"></i>
-          <span>Google Doc</span>
+      <!-- 右側按鈕群 & 手機漢堡選單按鈕 -->
+      <div class="flex items-center space-x-2 sm:space-x-3">
+        <div class="hidden sm:flex items-center space-x-2">
+          <a href="https://docs.google.com/document/d/1Nri3kQFaBQLcrsEg4tCaLlyQsFmJt0x53TESfDCJF98/edit" target="_blank" class="inline-flex items-center space-x-1.5 px-2.5 py-1.5 text-xs font-semibold rounded-lg bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200 transition">
+            <i data-lucide="file-text" class="w-3.5 h-3.5 text-blue-600"></i>
+            <span>Google Doc</span>
+          </a>
+          <a href="https://docs.google.com/spreadsheets/d/1x3MzQVA7E-mlysZBrX5PtroR-QjWJeGR_L6nnHDBGeo/edit" target="_blank" class="inline-flex items-center space-x-1.5 px-2.5 py-1.5 text-xs font-semibold rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 transition">
+            <i data-lucide="table" class="w-3.5 h-3.5 text-emerald-600"></i>
+            <span>Google Sheet</span>
+          </a>
+        </div>
+
+        <!-- 手機漢堡選單按鈕 (Mobile Hamburger Button) -->
+        <button id="mobileMenuBtn" aria-label="切換選單" class="lg:hidden p-2 rounded-xl text-stone-700 hover:bg-stone-100 active:scale-95 transition focus:outline-none">
+          <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- 手機端下拉抽屜選單 (Mobile Navigation Drawer) -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-stone-200 shadow-xl px-4 py-5 space-y-3 animate-fadeIn">
+      <div class="grid grid-cols-2 gap-2 text-sm font-semibold text-stone-700">
+        <a href="#video-pitch" class="mobile-nav-link flex items-center space-x-2 p-2.5 rounded-xl bg-amber-50 text-amber-900 border border-amber-200 font-bold">
+          <i data-lucide="play-circle" class="w-4 h-4 text-amber-600"></i>
+          <span>🎬 45秒影片</span>
         </a>
-        <a href="https://docs.google.com/spreadsheets/d/1x3MzQVA7E-mlysZBrX5PtroR-QjWJeGR_L6nnHDBGeo/edit" target="_blank" class="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 transition">
-          <i data-lucide="table" class="w-4 h-4 text-emerald-600"></i>
-          <span>Google Sheet</span>
+        <a href="#summary" class="mobile-nav-link flex items-center space-x-2 p-2.5 rounded-xl bg-stone-50 hover:bg-coffee-50 transition">
+          <i data-lucide="zap" class="w-4 h-4 text-coffee-600"></i>
+          <span>執行摘要</span>
+        </a>
+        <a href="#budget" class="mobile-nav-link flex items-center space-x-2 p-2.5 rounded-xl bg-stone-50 hover:bg-coffee-50 transition">
+          <i data-lucide="pie-chart" class="w-4 h-4 text-coffee-600"></i>
+          <span>100萬配置</span>
+        </a>
+        <a href="#menu" class="mobile-nav-link flex items-center space-x-2 p-2.5 rounded-xl bg-stone-50 hover:bg-coffee-50 transition">
+          <i data-lucide="coffee" class="w-4 h-4 text-coffee-600"></i>
+          <span>菜單與毛利</span>
+        </a>
+        <a href="#opex" class="mobile-nav-link flex items-center space-x-2 p-2.5 rounded-xl bg-stone-50 hover:bg-coffee-50 transition">
+          <i data-lucide="trending-up" class="w-4 h-4 text-coffee-600"></i>
+          <span>損益兩平點</span>
+        </a>
+        <a href="#projections" class="mobile-nav-link flex items-center space-x-2 p-2.5 rounded-xl bg-stone-50 hover:bg-coffee-50 transition">
+          <i data-lucide="bar-chart-3" class="w-4 h-4 text-coffee-600"></i>
+          <span>3年走勢</span>
+        </a>
+      </div>
+      <a href="#simulator" class="mobile-nav-link flex items-center justify-center space-x-2 p-3 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold text-sm">
+        <i data-lucide="calculator" class="w-4 h-4 text-emerald-600"></i>
+        <span>即時財務模擬器</span>
+      </a>
+      <div class="pt-2 border-t border-stone-100 flex items-center justify-between gap-2 text-xs font-semibold">
+        <a href="https://annie752703-svg.github.io/investor-profile/" target="_blank" class="flex-1 py-2 text-center rounded-lg bg-coffee-100 text-coffee-800">
+          創辦人履歷
+        </a>
+        <a href="https://docs.google.com/document/d/1Nri3kQFaBQLcrsEg4tCaLlyQsFmJt0x53TESfDCJF98/edit" target="_blank" class="flex-1 py-2 text-center rounded-lg bg-blue-50 text-blue-700 border border-blue-200">
+          Doc 企劃書
+        </a>
+        <a href="https://docs.google.com/spreadsheets/d/1x3MzQVA7E-mlysZBrX5PtroR-QjWJeGR_L6nnHDBGeo/edit" target="_blank" class="flex-1 py-2 text-center rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200">
+          Sheet 財務
         </a>
       </div>
     </div>
   </header>
 
   <!-- 主視覺橫幅 (Hero Section) -->
-  <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
+  <section class="relative overflow-hidden pt-8 pb-14 sm:pt-12 sm:pb-20 lg:pt-20 lg:pb-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="grid lg:grid-cols-12 gap-8 sm:gap-12 items-center">
         
-        <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-coffee-100 border border-coffee-200 text-coffee-800 text-xs font-bold tracking-wide uppercase">
+        <div class="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-coffee-100 border border-coffee-200 text-coffee-800 text-[11px] sm:text-xs font-bold tracking-wide uppercase">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             <span>NT$ 1,000,000 精準創業模型</span>
           </div>
 
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-coffee-900 tracking-tight leading-tight">
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-coffee-900 tracking-tight leading-[1.2]">
             高坪效精品外帶咖啡館<br>
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-coffee-600 via-amber-700 to-coffee-800">
-              商業企劃與動態財務決策系統
+              商業企劃與動態財務系統
             </span>
           </h1>
 
-          <p class="text-lg text-stone-600 leading-relaxed max-w-2xl">
+          <p class="text-sm sm:text-base lg:text-lg text-stone-600 leading-relaxed max-w-2xl">
             專為捷運站點與辦公商圈通勤族設計的 Micro-Cafe（10–14 坪）。透過極簡動線、90 秒極速現磨現萃、以及 74.2% 的高毛利產品組合，消除多餘內用坪數與高昂租金包袱，兼具品質與高翻桌外帶產能。
           </p>
 
           <!-- 4 大核心 KPI 快速指標 -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
-            <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm">
-              <div class="text-xs font-medium text-stone-500 mb-1">總啟動資本</div>
-              <div class="text-2xl font-black text-coffee-900">NT$ 1.0M</div>
-              <div class="text-xs text-emerald-600 font-semibold mt-1">含3個月安全週轉金</div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-2 sm:pt-4">
+            <div class="bg-white p-3.5 sm:p-4 rounded-2xl border border-stone-200 shadow-sm">
+              <div class="text-[11px] sm:text-xs font-medium text-stone-500 mb-0.5 sm:mb-1">總啟動資本</div>
+              <div class="text-xl sm:text-2xl font-black text-coffee-900">NT$ 1.0M</div>
+              <div class="text-[10px] sm:text-xs text-emerald-600 font-semibold mt-1">含3個月安全週轉金</div>
             </div>
-            <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm">
-              <div class="text-xs font-medium text-stone-500 mb-1">每日損益兩平點</div>
-              <div class="text-2xl font-black text-coffee-900">68 <span class="text-sm font-normal text-stone-500">杯/天</span></div>
-              <div class="text-xs text-blue-600 font-semibold mt-1">每月 1,760 杯</div>
+            <div class="bg-white p-3.5 sm:p-4 rounded-2xl border border-stone-200 shadow-sm">
+              <div class="text-[11px] sm:text-xs font-medium text-stone-500 mb-0.5 sm:mb-1">每日損益兩平點</div>
+              <div class="text-xl sm:text-2xl font-black text-coffee-900">68 <span class="text-xs sm:text-sm font-normal text-stone-500">杯/天</span></div>
+              <div class="text-[10px] sm:text-xs text-blue-600 font-semibold mt-1">每月 1,760 杯</div>
             </div>
-            <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm">
-              <div class="text-xs font-medium text-stone-500 mb-1">首年預估營收</div>
-              <div class="text-2xl font-black text-coffee-900">NT$ 3.58M</div>
-              <div class="text-xs text-emerald-600 font-semibold mt-1">首年淨利 NT$ 77 萬</div>
+            <div class="bg-white p-3.5 sm:p-4 rounded-2xl border border-stone-200 shadow-sm">
+              <div class="text-[11px] sm:text-xs font-medium text-stone-500 mb-0.5 sm:mb-1">首年預估營收</div>
+              <div class="text-xl sm:text-2xl font-black text-coffee-900">NT$ 3.58M</div>
+              <div class="text-[10px] sm:text-xs text-emerald-600 font-semibold mt-1">首年淨利 NT$ 77 萬</div>
             </div>
-            <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm">
-              <div class="text-xs font-medium text-stone-500 mb-1">投資回收期</div>
-              <div class="text-2xl font-black text-coffee-900">15 <span class="text-sm font-normal text-stone-500">個月</span></div>
-              <div class="text-xs text-amber-600 font-semibold mt-1">三年累積 ROI 366%</div>
+            <div class="bg-white p-3.5 sm:p-4 rounded-2xl border border-stone-200 shadow-sm">
+              <div class="text-[11px] sm:text-xs font-medium text-stone-500 mb-0.5 sm:mb-1">投資回收期</div>
+              <div class="text-xl sm:text-2xl font-black text-coffee-900">15 <span class="text-xs sm:text-sm font-normal text-stone-500">個月</span></div>
+              <div class="text-[10px] sm:text-xs text-amber-600 font-semibold mt-1">三年累積 ROI 366%</div>
             </div>
           </div>
         </div>
+
 
         <!-- 右側視覺品牌卡片 -->
         <div class="lg:col-span-5 flex justify-center">
@@ -143,36 +198,36 @@
   </section>
 
   <!-- 0. 創辦人 45 秒動態影音介紹 (Video Pitch & Founder Intro) -->
-  <section id="video-pitch" class="py-16 bg-gradient-to-b from-[#FBF9F5] via-coffee-50/60 to-white border-t border-stone-200">
+  <section id="video-pitch" class="py-10 sm:py-16 bg-gradient-to-b from-[#FBF9F5] via-coffee-50/60 to-white border-t border-stone-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200 shadow-xl overflow-hidden relative">
+      <div class="bg-white rounded-3xl p-5 sm:p-8 lg:p-12 border border-stone-200 shadow-xl overflow-hidden relative">
         <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-coffee-100 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
 
-        <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-4 border-b border-stone-100 gap-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 sm:mb-8 pb-4 border-b border-stone-100 gap-4">
           <div>
-            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-2">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2">
               <span class="w-2 h-2 rounded-full bg-amber-600 animate-ping"></span>
               <span>45s Founder Video Pitch</span>
             </div>
-            <h2 class="text-2xl sm:text-3xl font-black text-stone-900">45 秒創辦人動態自我介紹與商業模式解說</h2>
-            <p class="text-sm text-stone-500 mt-1">由創辦人楊安妮親自為您拆解 Micro-Cafe 的高坪效獲利公式</p>
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-black text-stone-900">45 秒創辦人動態自我介紹與商業模式</h2>
+            <p class="text-xs sm:text-sm text-stone-500 mt-1">由創辦人楊安妮親自為您拆解 Micro-Cafe 的高坪效獲利公式</p>
           </div>
-          <div class="flex items-center space-x-3">
-            <a href="https://annie752703-svg.github.io/investor-profile/" target="_blank" class="px-4 py-2 rounded-xl bg-coffee-100 text-coffee-800 font-bold text-xs hover:bg-coffee-200 transition flex items-center space-x-2 border border-coffee-200">
+          <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+            <a href="https://annie752703-svg.github.io/investor-profile/" target="_blank" class="px-3 py-2 sm:px-4 sm:py-2 rounded-xl bg-coffee-100 text-coffee-800 font-bold text-xs hover:bg-coffee-200 transition flex items-center space-x-1.5 border border-coffee-200">
               <i data-lucide="user-check" class="w-4 h-4 text-coffee-700"></i>
-              <span>創辦人投資履歷表</span>
+              <span>創辦人履歷</span>
             </a>
-            <a href="intro.mp4" download="Annie_Yang_Coffee_Intro.mp4" class="px-4 py-2 rounded-xl bg-coffee-800 text-white font-bold text-xs hover:bg-coffee-900 transition flex items-center space-x-2 shadow-sm">
+            <a href="intro.mp4" download="Annie_Yang_Coffee_Intro.mp4" class="px-3 py-2 sm:px-4 sm:py-2 rounded-xl bg-coffee-800 text-white font-bold text-xs hover:bg-coffee-900 transition flex items-center space-x-1.5 shadow-sm">
               <i data-lucide="download" class="w-4 h-4"></i>
-              <span>下載 MP4 檔案 (12.4 MB)</span>
+              <span>下載 MP4 (12.4 MB)</span>
             </a>
           </div>
         </div>
 
         <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <!-- 影片播放器 (直式 9:16 Shorts) -->
-          <div class="lg:col-span-5 flex justify-center">
-            <div class="relative w-full max-w-[320px] rounded-3xl overflow-hidden shadow-2xl border-4 border-stone-800 bg-black aspect-[9/16] group">
+          <div class="lg:col-span-5 flex justify-center w-full">
+            <div class="relative w-full max-w-[280px] sm:max-w-[320px] rounded-3xl overflow-hidden shadow-2xl border-4 border-stone-800 bg-black aspect-[9/16] group">
               <video controls playsinline class="w-full h-full object-cover" poster="founder_q.jpg">
                 <source src="intro.mp4" type="video/mp4">
                 您的瀏覽器不支援 HTML5 影片播放。
@@ -182,18 +237,18 @@
 
           <!-- 旁白重點與短影音亮點 -->
           <div class="lg:col-span-7 space-y-5">
-            <div class="flex items-center space-x-4 p-4 rounded-2xl bg-coffee-50 border border-coffee-100">
-              <img src="founder_q.jpg" alt="楊安妮 Q版形象" class="w-16 h-16 rounded-2xl object-cover shadow-sm border border-coffee-200">
-              <div>
-                <h4 class="text-lg font-bold text-coffee-900">楊安妮 (Annie Yang)</h4>
-                <p class="text-xs text-coffee-700 font-semibold">Artisan Brew & Co. 創辦人 / 總咖啡師</p>
-                <p class="text-xs text-stone-500 mt-0.5">「將精品咖啡工藝化為具備高翻桌率與高資本報酬率的可擴展微型店模型」</p>
+            <div class="flex items-center space-x-3.5 sm:space-x-4 p-3.5 sm:p-4 rounded-2xl bg-coffee-50 border border-coffee-100">
+              <img src="founder_q.jpg" alt="楊安妮 Q版形象" class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl object-cover shadow-sm border border-coffee-200 flex-shrink-0">
+              <div class="min-w-0">
+                <h4 class="text-base sm:text-lg font-black text-coffee-900 truncate">楊安妮 (Annie Yang)</h4>
+                <p class="text-[11px] sm:text-xs text-coffee-700 font-bold truncate">Artisan Brew & Co. 創辦人 / 總咖啡師</p>
+                <p class="text-[11px] sm:text-xs text-stone-500 mt-0.5 line-clamp-2">「將精品咖啡工藝化為具備高翻桌率與高資本報酬率的可擴展微型店模型」</p>
               </div>
             </div>
 
-            <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200 space-y-3">
-              <span class="text-xs font-bold text-coffee-800 uppercase tracking-wider block">🎬 影片精華旁白節奏</span>
-              <ul class="text-xs sm:text-sm text-stone-600 space-y-2.5 pl-4 list-disc leading-relaxed">
+            <div class="p-4 sm:p-6 rounded-2xl bg-stone-50 border border-stone-200 space-y-2.5 sm:space-y-3">
+              <span class="text-[11px] sm:text-xs font-bold text-coffee-800 uppercase tracking-wider block">🎬 影片精華旁白節奏</span>
+              <ul class="text-xs sm:text-sm text-stone-600 space-y-2 sm:space-y-2.5 pl-4 list-disc leading-relaxed">
                 <li><strong class="text-stone-900">00:00 – 00:10 開場破題：</strong> 哈囉大家好！我是楊安妮，Artisan Brew 的創辦人。誰說在台北開精品咖啡館，一定要花大錢？</li>
                 <li><strong class="text-stone-900">00:10 – 00:22 營運亮點：</strong> 我們打造十坪大的外帶微型店，把動線做到極致！90 秒極速現磨現萃，晨間通勤不用等，坪效是傳統大店的 3 倍！</li>
                 <li><strong class="text-stone-900">00:22 – 00:34 財務安全：</strong> 精準控制固定成本，綜合毛利率高達 74.2%！每天只要賣出 68 杯，就能達到損益兩平！</li>
@@ -961,6 +1016,34 @@
     cupsRange.addEventListener('input', updateSimulation);
     priceRange.addEventListener('input', updateSimulation);
     updateSimulation();
+
+    // 4. 手機端漢堡選單展開/收合控制
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', function() {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          menuIcon.setAttribute('data-lucide', 'x');
+        } else {
+          mobileMenu.classList.add('hidden');
+          menuIcon.setAttribute('data-lucide', 'menu');
+        }
+        lucide.createIcons();
+      });
+
+      // 點擊選單項目後自動關閉抽屜
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuIcon.setAttribute('data-lucide', 'menu');
+          lucide.createIcons();
+        });
+      });
+    }
   </script>
 </body>
 </html>
