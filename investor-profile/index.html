@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annie Chen | 創辦人投資人簡報履歷 (Founder & Executive Profile for Investors)</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: {
+              50: '#FDFBF7',
+              100: '#F5EBE1',
+              200: '#E6BA95',
+              300: '#C4A482',
+              400: '#A67B5B',
+              500: '#8C6239',
+              600: '#6F4E37',
+              700: '#5C4033',
+              800: '#4A2C11',
+              900: '#2A1808'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
+    }
+    @media print {
+      header, footer, .no-print {
+        display: none !important;
+      }
+      body {
+        background: white !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#FBF9F5] text-stone-800 antialiased selection:bg-coffee-200">
+
+  <!-- 頂部導覽列 -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200 shadow-sm no-print">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <img src="logo.jpg" alt="Artisan Brew Logo" class="w-11 h-11 rounded-xl object-contain shadow-sm border border-stone-200 bg-white p-1">
+        <div>
+          <span class="text-lg font-black tracking-tight text-coffee-900 block leading-tight">Annie Chen</span>
+          <span class="text-xs text-coffee-600 font-semibold tracking-wide">Founder & CEO · Artisan Brew & Co.</span>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-3 text-xs font-bold">
+        <a href="https://annie752703-svg.github.io/coffee-shop/" target="_blank" class="px-3 py-1.5 rounded-lg bg-coffee-100 text-coffee-800 hover:bg-coffee-200 transition flex items-center space-x-1.5">
+          <i data-lucide="globe" class="w-3.5 h-3.5 text-coffee-700"></i>
+          <span>商業企劃官網</span>
+        </a>
+        <a href="https://docs.google.com/document/d/1Nri3kQFaBQLcrsEg4tCaLlyQsFmJt0x53TESfDCJF98/edit?usp=sharing" target="_blank" class="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200 transition flex items-center space-x-1.5">
+          <i data-lucide="file-text" class="w-3.5 h-3.5 text-blue-600"></i>
+          <span>企劃書 (Doc)</span>
+        </a>
+        <a href="https://docs.google.com/spreadsheets/d/1x3MzQVA7E-mlysZBrX5PtroR-QjWJeGR_L6nnHDBGeo/edit?usp=sharing" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 transition flex items-center space-x-1.5">
+          <i data-lucide="table" class="w-3.5 h-3.5 text-emerald-600"></i>
+          <span>財務模型 (Sheet)</span>
+        </a>
+        <button onclick="window.print()" class="px-3 py-1.5 rounded-lg bg-stone-900 text-white hover:bg-stone-800 transition flex items-center space-x-1.5">
+          <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+          <span>列印/存為 PDF</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主體內容區塊 (A4 比例優化，適合投資人瀏覽與列印) -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12">
+
+    <!-- 創辦人核心形象與個人概要 (Executive Hero Bio) -->
+    <section class="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200 shadow-md">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- 左側創辦人形象照 -->
+        <div class="lg:col-span-4 flex flex-col items-center">
+          <div class="relative w-64 h-80 sm:w-72 sm:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-coffee-100 group">
+            <img src="founder.jpg" alt="Annie Chen 創辦人形象照" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-5">
+              <div class="text-white">
+                <span class="text-xs font-semibold uppercase tracking-wider text-amber-300">Head Barista & Operator</span>
+                <p class="text-sm font-bold">陳安妮 (Annie Chen)</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center space-x-2 text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>天使輪募資中 · 出資額 NT$ 450,000 (45%)</span>
+          </div>
+        </div>
+
+        <!-- 右側個人簡述與關鍵投資亮點 -->
+        <div class="lg:col-span-8 space-y-6">
+          <div class="space-y-2">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-coffee-100 text-coffee-800 text-xs font-bold uppercase tracking-wider">
+              Executive Profile · Angel Pitch
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-black text-coffee-900 tracking-tight">
+              陳安妮 (Annie Chen)
+            </h1>
+            <p class="text-base text-coffee-600 font-bold">
+              創辦人 & 執行長 / 總咖啡師 · Artisan Brew & Co. (精品外帶咖啡小館)
+            </p>
+          </div>
+
+          <p class="text-stone-600 leading-relaxed text-sm sm:text-base">
+            具備企業管理與財務分析背景的精品咖啡創業家。專注於<strong>高坪效選址、極致成本紀律、90 秒標準化出杯工藝與數位熟客運營</strong>。建立以 <strong class="text-coffee-900">NT$ 1,000,000 輕資產啟動</strong>，並於 <strong class="text-emerald-700 font-bold">15 個月完全回收投資本金</strong> 的標準化微型外帶門市模型，致力將精緻咖啡工藝轉化為兼具高翻桌率與高資本報酬率的可擴展連鎖體系。
+          </p>
+
+          <!-- 4 大核心投資量化指標 (Investment Traction Metrics) -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
+            <div class="p-4 rounded-2xl bg-coffee-50/80 border border-coffee-100">
+              <span class="text-xs text-stone-500 block font-medium mb-1">資本啟動門檻</span>
+              <span class="text-xl sm:text-2xl font-black text-coffee-900 font-mono">NT$ 1.0M</span>
+              <span class="text-xs text-stone-500 block mt-1">100% 專款專用</span>
+            </div>
+            <div class="p-4 rounded-2xl bg-coffee-50/80 border border-coffee-100">
+              <span class="text-xs text-stone-500 block font-medium mb-1">綜合產品毛利</span>
+              <span class="text-xl sm:text-2xl font-black text-emerald-700 font-mono">74.2%</span>
+              <span class="text-xs text-emerald-600 block mt-1 font-semibold">遠高於業界 65%</span>
+            </div>
+            <div class="p-4 rounded-2xl bg-coffee-50/80 border border-coffee-100">
+              <span class="text-xs text-stone-500 block font-medium mb-1">日損益兩平點</span>
+              <span class="text-xl sm:text-2xl font-black text-blue-700 font-mono">68 杯</span>
+              <span class="text-xs text-stone-500 block mt-1">月僅需 1,760 杯</span>
+            </div>
+            <div class="p-4 rounded-2xl bg-coffee-50/80 border border-coffee-100">
+              <span class="text-xs text-stone-500 block font-medium mb-1">投資本金回收期</span>
+              <span class="text-xl sm:text-2xl font-black text-amber-700 font-mono">15 個月</span>
+              <span class="text-xs text-amber-600 block mt-1 font-semibold">首年 EBIT 77.1 萬</span>
+            </div>
+          </div>
+
+          <!-- 創辦人聯絡管道 -->
+          <div class="flex flex-wrap items-center gap-4 pt-2 text-xs text-stone-600 font-medium">
+            <div class="flex items-center space-x-1.5">
+              <i data-lucide="mail" class="w-4 h-4 text-coffee-600"></i>
+              <span>annie752703@gmail.com</span>
+            </div>
+            <div class="flex items-center space-x-1.5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-coffee-600"></i>
+              <span>台灣台北市 (Taipei, Taiwan)</span>
+            </div>
+            <div class="flex items-center space-x-1.5">
+              <i data-lucide="github" class="w-4 h-4 text-coffee-600"></i>
+              <span>github.com/annie752703-svg</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 創辦人四大核心優勢 (Core Competencies) -->
+    <section class="space-y-6">
+      <div class="text-left">
+        <h2 class="text-xs font-bold text-coffee-600 tracking-wider uppercase mb-1">Core Competencies</h2>
+        <h3 class="text-2xl font-black text-stone-900">創辦人四大核心競爭優勢</h3>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white p-7 rounded-3xl border border-stone-200 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-coffee-100 text-coffee-800 flex items-center justify-center font-bold">
+            <i data-lucide="calculator" class="w-5 h-5"></i>
+          </div>
+          <h4 class="text-lg font-bold text-stone-900">1. 精確財務模型與極致成本紀律</h4>
+          <p class="text-sm text-stone-600 leading-relaxed">
+            親自編制動態 Google Sheets 損益兩平試算模型，精準量化固定成本 (NT$132,000/月) 與變動成本 (食材25%)。在 100 萬總預算中堅守 15% (15萬元) 的高規格營運安全週轉儲備，確保新店開幕即便面臨氣候波動亦無斷流風險。
+          </p>
+        </div>
+
+        <div class="bg-white p-7 rounded-3xl border border-stone-200 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-coffee-100 text-coffee-800 flex items-center justify-center font-bold">
+            <i data-lucide="coffee" class="w-5 h-5"></i>
+          </div>
+          <h4 class="text-lg font-bold text-stone-900">2. SCA 國際高級認證與品控 SOP 化</h4>
+          <p class="text-sm text-stone-600 leading-relaxed">
+            持有 SCA 國際精品咖啡協會高級咖啡師與感官品測認證。制定標準化雙孔義式機萃取參數（萃取率 EY 19–21%、水質 TDS 75–120ppm）。晨間雙軌出杯 SOP 能在 90 秒內完成研磨、填壓、萃取與微奶泡拉花，尖峰產能每小時高達 40 杯。
+          </p>
+        </div>
+
+        <div class="bg-white p-7 rounded-3xl border border-stone-200 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-coffee-100 text-coffee-800 flex items-center justify-center font-bold">
+            <i data-lucide="trending-up" class="w-5 h-5"></i>
+          </div>
+          <h4 class="text-lg font-bold text-stone-900">3. 數據化選址與坪效極大化策略</h4>
+          <p class="text-sm text-stone-600 leading-relaxed">
+            徹底剔除傳統休閒咖啡館 30–50 坪昂貴低翻桌內用區。專注鎖定 10–14 坪捷運出入口 200 公尺商辦一/二線角窗，租金嚴格壓制在 4 萬元以內。以 60% 吧檯生產區 + 20% 儲藏區 + 20% 快速取餐區配置，創造傳統門市 3.2 倍的驚人坪效。
+          </p>
+        </div>
+
+        <div class="bg-white p-7 rounded-3xl border border-stone-200 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-coffee-100 text-coffee-800 flex items-center justify-center font-bold">
+            <i data-lucide="smartphone" class="w-5 h-5"></i>
+          </div>
+          <h4 class="text-lg font-bold text-stone-900">4. LINE OA 私域流量與企業晨間團訂</h4>
+          <p class="text-sm text-stone-600 leading-relaxed">
+            導入全無紙化 LINE 數位會員與集點機制，掌握週邊商辦大樓住戶與企業員工名單。設計「08:30 前 LINE 預約手提外送」，由吧檯預先萃取冷萃與批次熱美式，免去外送平台 35% 抽成，牢牢鎖定每週超過 200 組企業高黏著晨間訂單。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 經歷與專業資格 (Experience & Qualifications) -->
+    <section class="grid lg:grid-cols-12 gap-8">
+      
+      <!-- 職涯經歷 (Track Record) -->
+      <div class="lg:col-span-7 bg-white p-8 rounded-3xl border border-stone-200 shadow-sm space-y-6">
+        <div>
+          <h2 class="text-xs font-bold text-coffee-600 tracking-wider uppercase mb-1">Track Record</h2>
+          <h3 class="text-xl font-black text-stone-900">專業經歷與實戰成果</h3>
+        </div>
+
+        <div class="space-y-6 border-l-2 border-coffee-200 pl-6 ml-2">
+          <!-- 經歷 1 -->
+          <div class="relative">
+            <span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-coffee-800 border-2 border-white"></span>
+            <span class="text-xs font-bold text-coffee-700 font-mono">2024 – 迄今</span>
+            <h4 class="text-base font-bold text-stone-900 mt-0.5">創辦人兼營運負責人 · Artisan Brew & Co.</h4>
+            <p class="text-xs text-stone-500 mt-1 leading-relaxed">
+              統籌完成 100 萬天使啟動模型架構、品牌視覺 VI 設計、74.2% 高毛利菜單研發、雲端 POS 串接及 12 週開店實施時程。
+            </p>
+          </div>
+
+          <!-- 經歷 2 -->
+          <div class="relative">
+            <span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-coffee-600 border-2 border-white"></span>
+            <span class="text-xs font-bold text-coffee-700 font-mono">2021 – 2024</span>
+            <h4 class="text-base font-bold text-stone-900 mt-0.5">營運店長 / 研發品控組長 · 知名精品連鎖咖啡</h4>
+            <p class="text-xs text-stone-500 mt-1 leading-relaxed">
+              管理單店年營收 NT$ 780 萬之繁忙捷運門市，領導 8 位正兼職員工。優化晨間出杯動線使尖峰期出杯速度提升 28%，將門市食材損耗率壓低至 1.8% 以下。
+            </p>
+          </div>
+
+          <!-- 經歷 3 -->
+          <div class="relative">
+            <span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-coffee-400 border-2 border-white"></span>
+            <span class="text-xs font-bold text-coffee-700 font-mono">2019 – 2021</span>
+            <h4 class="text-base font-bold text-stone-900 mt-0.5">餐飲營運與坪效分析師 · 連鎖加盟管理顧問公司</h4>
+            <p class="text-xs text-stone-500 mt-1 leading-relaxed">
+              負責評估雙北商圈 30+ 處零售餐飲店點之人流動線、租金投報比 (Cap Rate) 與商圈競合分析，建立標準化評估審查表。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 專業證照與學歷 (Education & Certifications) -->
+      <div class="lg:col-span-5 bg-white p-8 rounded-3xl border border-stone-200 shadow-sm space-y-6">
+        <div>
+          <h2 class="text-xs font-bold text-coffee-600 tracking-wider uppercase mb-1">Credentials</h2>
+          <h3 class="text-xl font-black text-stone-900">專業證照與學歷背景</h3>
+        </div>
+
+        <div class="space-y-4">
+          <!-- SCA 證照組合 -->
+          <div class="p-4 rounded-2xl bg-coffee-50 border border-coffee-100 space-y-2">
+            <div class="flex items-center space-x-2 text-coffee-900 font-bold text-sm">
+              <i data-lucide="award" class="w-4 h-4 text-coffee-700"></i>
+              <span>SCA 國際精品咖啡協會認證</span>
+            </div>
+            <ul class="text-xs text-stone-600 space-y-1 pl-6 list-disc">
+              <li><strong>Barista Skills Professional</strong> (高級咖啡師國際認證)</li>
+              <li><strong>Sensory Skills Intermediate</strong> (感官風味品測認證)</li>
+              <li><strong>Brewing Intermediate</strong> (金杯金粹率沖煮認證)</li>
+            </ul>
+          </div>
+
+          <!-- 學歷 -->
+          <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200 space-y-1">
+            <div class="flex items-center space-x-2 text-stone-900 font-bold text-sm">
+              <i data-lucide="graduation-cap" class="w-4 h-4 text-stone-700"></i>
+              <span>國立大學 企業管理學系 學士</span>
+            </div>
+            <p class="text-xs text-stone-500 pl-6">
+              主修零售連鎖營運，副修財務管理與會計財務分析
+            </p>
+          </div>
+
+          <!-- 食品安全衛生證照 -->
+          <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200 space-y-1">
+            <div class="flex items-center space-x-2 text-stone-900 font-bold text-sm">
+              <i data-lucide="shield-check" class="w-4 h-4 text-stone-700"></i>
+              <span>國家乙級餐飲衛生管理員 (HACCP)</span>
+            </div>
+            <p class="text-xs text-stone-500 pl-6">
+              具備完整門市食品安全、水源檢測、動線衛生標準建置資格
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 投資提案與股權結構條款 (Investment Proposal & Equity Terms) -->
+    <section class="bg-stone-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-stone-800 pb-6">
+        <div>
+          <span class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-1 block">Investment Structure</span>
+          <h3 class="text-2xl sm:text-3xl font-black text-white">天使輪募資提案與投資人權益規範</h3>
+        </div>
+        <div class="mt-4 md:mt-0 text-sm font-bold text-emerald-400 bg-emerald-950/80 px-4 py-2 rounded-xl border border-emerald-800">
+          目標募資金額：NT$ 450,000（出資佔比 45%）
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- 條款 1 -->
+        <div class="bg-stone-800/80 p-6 rounded-2xl border border-stone-700/80 space-y-3">
+          <div class="text-amber-400 font-mono text-sm font-bold">條款 01</div>
+          <h4 class="text-base font-bold text-white">股權架構與出資比例</h4>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            總啟動資本 NT$ 1,000,000。創辦人全職投入經營技術股佔 <strong>55%</strong>；天使投資人出資 NT$ 450,000 佔股 <strong>45%</strong>，創辦人具經營主導權以確保門市執行力。
+          </p>
+        </div>
+
+        <!-- 條款 2 -->
+        <div class="bg-stone-800/80 p-6 rounded-2xl border border-stone-700/80 space-y-3">
+          <div class="text-amber-400 font-mono text-sm font-bold">條款 02</div>
+          <h4 class="text-base font-bold text-white">加速回本季度分紅政策</h4>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            為保障投資人風險，開幕前 15 個月<strong>每季提撥稅後淨利之 50% 進行現金分紅</strong>，優先返還投資本金。預估於第 15 個月完全還本後，轉為常態穩定季度盈餘分紅。
+          </p>
+        </div>
+
+        <!-- 條款 3 -->
+        <div class="bg-stone-800/80 p-6 rounded-2xl border border-stone-700/80 space-y-3">
+          <div class="text-amber-400 font-mono text-sm font-bold">條款 03</div>
+          <h4 class="text-base font-bold text-white">退場機制與二店優先認購</h4>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            首店模型驗證成功並累積 NT$ 3.66M 現金流後，天使投資人享有<strong>二號連鎖直營店的優先平價認股權</strong>；滿三年可選擇股權溢價回購退場或持續享受集團分紅。
+          </p>
+        </div>
+      </div>
+
+      <!-- 財務即時透明查驗條款 -->
+      <div class="p-6 rounded-2xl bg-stone-800/50 border border-stone-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="space-y-1">
+          <div class="text-sm font-bold text-white flex items-center space-x-2">
+            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+            <span>100% 財務透明度與即時雲端審計</span>
+          </div>
+          <p class="text-xs text-stone-400">
+            投資人具備專屬權限，隨時在線調閱 Google Sheets 雲端財務流水帳與每月 POS 銷貨報表，絕無黑箱作業。
+          </p>
+        </div>
+        <a href="https://docs.google.com/spreadsheets/d/1x3MzQVA7E-mlysZBrX5PtroR-QjWJeGR_L6nnHDBGeo/edit?usp=sharing" target="_blank" class="px-5 py-2.5 rounded-xl bg-white text-stone-900 font-bold text-xs hover:bg-stone-200 transition whitespace-nowrap">
+          審閱即時財務模型
+        </a>
+      </div>
+    </section>
+
+    <!-- 投資人一鍵查核資源庫 (Due Diligence Links) -->
+    <section class="bg-coffee-100/60 rounded-3xl p-8 border border-coffee-200 text-center space-y-6">
+      <div class="max-w-2xl mx-auto space-y-2">
+        <h3 class="text-2xl font-black text-coffee-900">投資人實質審查資源專區 (Due Diligence)</h3>
+        <p class="text-xs text-stone-600">
+          歡迎隨時調閱我們已建置完成之商業企劃案全套生態系，檢驗各項數據與財務邏輯：
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="https://annie752703-svg.github.io/coffee-shop/" target="_blank" class="px-5 py-3 rounded-xl bg-coffee-800 text-white font-bold text-xs hover:bg-coffee-900 transition flex items-center space-x-2 shadow-sm">
+          <i data-lucide="globe" class="w-4 h-4"></i>
+          <span>線上動態商業企劃網站 (Live Web)</span>
+        </a>
+
+        <a href="https://docs.google.com/document/d/1Nri3kQFaBQLcrsEg4tCaLlyQsFmJt0x53TESfDCJF98/edit?usp=sharing" target="_blank" class="px-5 py-3 rounded-xl bg-white text-blue-700 font-bold text-xs hover:bg-stone-50 border border-blue-200 transition flex items-center space-x-2 shadow-sm">
+          <i data-lucide="file-text" class="w-4 h-4 text-blue-600"></i>
+          <span>完整商業計劃書 (Google Doc)</span>
+        </a>
+
+        <a href="https://docs.google.com/spreadsheets/d/1x3MzQVA7E-mlysZBrX5PtroR-QjWJeGR_L6nnHDBGeo/edit?usp=sharing" target="_blank" class="px-5 py-3 rounded-xl bg-white text-emerald-700 font-bold text-xs hover:bg-stone-50 border border-emerald-200 transition flex items-center space-x-2 shadow-sm">
+          <i data-lucide="table" class="w-4 h-4 text-emerald-600"></i>
+          <span>財務與損益兩平試算表 (Google Sheet)</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 頁尾 -->
+  <footer class="bg-stone-900 text-stone-400 py-10 text-xs border-t border-stone-800 no-print">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center space-x-2">
+        <img src="logo.jpg" alt="Logo" class="w-6 h-6 rounded-md object-contain bg-white p-0.5">
+        <span class="text-white font-bold">Annie Chen · Artisan Brew & Co.</span>
+      </div>
+      <p class="text-stone-500">
+        Confidential Pitch Document · Prepared exclusively for Prospective Angel Investors · 2026
+      </p>
+      <div class="flex space-x-4">
+        <a href="mailto:annie752703@gmail.com" class="hover:text-white transition">聯絡創辦人</a>
+        <a href="javascript:window.print()" class="hover:text-white transition">列印/存為 PDF</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
