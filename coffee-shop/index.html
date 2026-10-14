@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artisan Brew & Co. | 100萬咖啡創業商業企劃書與財務模型</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: {
+              50: '#FDFBF7',
+              100: '#F5EBE1',
+              200: '#E6BA95',
+              300: '#C4A482',
+              400: '#A67B5B',
+              500: '#8C6239',
+              600: '#6F4E37',
+              700: '#5C4033',
+              800: '#4A2C11',
+              900: '#2A1808'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#FBF9F5] text-stone-800 antialiased selection:bg-coffee-200">
+
+  <!-- 頂部導覽列 (Sticky Navigation) -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <img src="logo.jpg" alt="Artisan Brew Logo" class="w-12 h-12 rounded-xl object-contain shadow-sm border border-stone-200 bg-white p-1">
+        <div>
+          <span class="text-xl font-bold tracking-tight text-coffee-900 block leading-tight">Artisan Brew & Co.</span>
+          <span class="text-xs text-coffee-600 font-medium tracking-wide">精品外帶咖啡小館 · 商業企劃系統</span>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center space-x-7 text-sm font-semibold text-stone-600">
+        <a href="#summary" class="hover:text-coffee-600 transition">執行摘要</a>
+        <a href="#budget" class="hover:text-coffee-600 transition">100萬預算配置</a>
+        <a href="#menu" class="hover:text-coffee-600 transition">菜單與毛利</a>
+        <a href="#opex" class="hover:text-coffee-600 transition">營運與損益兩平</a>
+        <a href="#projections" class="hover:text-coffee-600 transition">3年財務模型</a>
+        <a href="#simulator" class="hover:text-coffee-600 transition">即時模擬器</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="https://docs.google.com/document/d/1Nri3kQFaBQLcrsEg4tCaLlyQsFmJt0x53TESfDCJF98/edit" target="_blank" class="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200 transition">
+          <i data-lucide="file-text" class="w-4 h-4 text-blue-600"></i>
+          <span>Google Doc</span>
+        </a>
+        <a href="https://docs.google.com/spreadsheets/d/1x3MzQVA7E-mlysZBrX5PtroR-QjWJeGR_L6nnHDBGeo/edit" target="_blank" class="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 transition">
+          <i data-lucide="table" class="w-4 h-4 text-emerald-600"></i>
+          <span>Google Sheet</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主視覺橫幅 (Hero Section) -->
+  <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-coffee-100 border border-coffee-200 text-coffee-800 text-xs font-bold tracking-wide uppercase">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>NT$ 1,000,000 精準創業模型</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-coffee-900 tracking-tight leading-tight">
+            高坪效精品外帶咖啡館<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-coffee-600 via-amber-700 to-coffee-800">
+              商業企劃與動態財務決策系統
+            </span>
+          </h1>
+
+          <p class="text-lg text-stone-600 leading-relaxed max-w-2xl">
+            專為捷運站點與辦公商圈通勤族設計的 Micro-Cafe（10–14 坪）。透過極簡動線、90 秒極速現磨現萃、以及 74.2% 的高毛利產品組合，消除多餘內用坪數與高昂租金包袱，兼具品質與高翻桌外帶產能。
+          </p>
+
+          <!-- 4 大核心 KPI 快速指標 -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+            <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm">
+              <div class="text-xs font-medium text-stone-500 mb-1">總啟動資本</div>
+              <div class="text-2xl font-black text-coffee-900">NT$ 1.0M</div>
+              <div class="text-xs text-emerald-600 font-semibold mt-1">含3個月安全週轉金</div>
+            </div>
+            <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm">
+              <div class="text-xs font-medium text-stone-500 mb-1">每日損益兩平點</div>
+              <div class="text-2xl font-black text-coffee-900">68 <span class="text-sm font-normal text-stone-500">杯/天</span></div>
+              <div class="text-xs text-blue-600 font-semibold mt-1">每月 1,760 杯</div>
+            </div>
+            <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm">
+              <div class="text-xs font-medium text-stone-500 mb-1">首年預估營收</div>
+              <div class="text-2xl font-black text-coffee-900">NT$ 3.58M</div>
+              <div class="text-xs text-emerald-600 font-semibold mt-1">首年淨利 NT$ 77 萬</div>
+            </div>
+            <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm">
+              <div class="text-xs font-medium text-stone-500 mb-1">投資回收期</div>
+              <div class="text-2xl font-black text-coffee-900">15 <span class="text-sm font-normal text-stone-500">個月</span></div>
+              <div class="text-xs text-amber-600 font-semibold mt-1">三年累積 ROI 366%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右側視覺品牌卡片 -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-md bg-white rounded-3xl p-6 shadow-xl border border-stone-200">
+            <div class="aspect-square rounded-2xl overflow-hidden bg-coffee-50 flex items-center justify-center p-4 border border-coffee-100 relative group">
+              <img src="logo.jpg" alt="Artisan Brew Logo Mockup" class="w-full h-full object-contain transform group-hover:scale-105 transition duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                <span class="text-white text-sm font-semibold tracking-wide">Artisan Brew & Co. 官方品牌視覺標章</span>
+              </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between text-xs text-stone-500 px-1">
+              <span>產地：衣索比亞 / 哥倫比亞莊園</span>
+              <span class="font-bold text-coffee-700">SCA 83+ 評分級生豆</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. 執行摘要 (Executive Summary) -->
+  <section id="summary" class="py-16 bg-white border-y border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="text-xs font-bold text-coffee-600 tracking-wider uppercase mb-2">Executive Summary</h2>
+        <h3 class="text-3xl font-extrabold text-stone-900">核心營運優勢與市場定位</h3>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-2xl bg-coffee-50 border border-coffee-100">
+          <div class="w-12 h-12 rounded-xl bg-coffee-800 text-white flex items-center justify-center mb-6 shadow-md">
+            <i data-lucide="zap" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-xl font-bold text-coffee-900 mb-3">高坪效與極速出杯</h4>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            10–14 坪輕巧店型，60% 空間保留為高規格人體工學吧檯，晨間雙手沖與雙萃取動線，外帶取餐縮短至 90 秒內，坪效為傳統座席咖啡館的 3.2 倍。
+          </p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-coffee-50 border border-coffee-100">
+          <div class="w-12 h-12 rounded-xl bg-coffee-800 text-white flex items-center justify-center mb-6 shadow-md">
+            <i data-lucide="award" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-xl font-bold text-coffee-900 mb-3">甜蜜點定價策略 (Sweet Spot)</h4>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            鎖定超商咖啡 (NT$45–65) 與高價精品館 (NT$160–220) 之間的百元真空帶，提供 NT$75–125 價位，讓每日飲用者輕鬆享受頂級精品義式。
+          </p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-coffee-50 border border-coffee-100">
+          <div class="w-12 h-12 rounded-xl bg-coffee-800 text-white flex items-center justify-center mb-6 shadow-md">
+            <i data-lucide="smartphone" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-xl font-bold text-coffee-900 mb-3">LINE 官方帳號數位熟客循環</h4>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            告別易遺失的紙本集點卡。全數位化集點、下雨天推播優惠券、以及早上 08:30 前 LINE 預定辦公室整組手提外送，掌握穩定 B2B 熟客基本盤。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 100萬預算分配 (Budget Allocation) -->
+  <section id="budget" class="py-16 bg-[#FBF9F5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <h2 class="text-xs font-bold text-coffee-600 tracking-wider uppercase mb-2">Startup Capital Allocation</h2>
+          <h3 class="text-3xl font-extrabold text-stone-900">NT$ 1,000,000 資本分配表與分析圖</h3>
+        </div>
+        <div class="mt-4 md:mt-0 text-sm font-semibold text-coffee-800 bg-coffee-100 px-4 py-2 rounded-xl border border-coffee-200">
+          總預算：NT$ 1,000,000（精確度 100%）
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <!-- 圓餅圖 / 甜甜圈圖 -->
+        <div class="lg:col-span-5 bg-white p-6 rounded-3xl border border-stone-200 shadow-sm flex flex-col items-center justify-center">
+          <div class="w-full max-w-sm h-80 relative">
+            <canvas id="budgetChart"></canvas>
+          </div>
+          <div class="text-center mt-4 text-xs text-stone-500">
+            * 優先保障專業生財器具萃取品質，並提撥 15% 充足週轉金
+          </div>
+        </div>
+
+        <!-- 細目表格 -->
+        <div class="lg:col-span-7 bg-white rounded-3xl border border-stone-200 shadow-sm overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-coffee-800 text-white font-semibold">
+                <tr>
+                  <th class="py-3.5 px-5">支出類別</th>
+                  <th class="py-3.5 px-4 text-right">預算金額</th>
+                  <th class="py-3.5 px-4 text-center">佔比</th>
+                  <th class="py-3.5 px-5">主要設備與規格內容</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-stone-100 text-stone-700">
+                <tr class="hover:bg-coffee-50/50 transition">
+                  <td class="py-3 px-5 font-bold text-stone-900 flex items-center space-x-2">
+                    <span class="w-3 h-3 rounded-full bg-[#6F4E37]"></span>
+                    <span>咖啡機具與廚房設備</span>
+                  </td>
+                  <td class="py-3 px-4 text-right font-mono font-bold">$320,000</td>
+                  <td class="py-3 px-4 text-center font-semibold text-coffee-700">32.0%</td>
+                  <td class="py-3 px-5 text-xs text-stone-500">雙孔商業義式機、定量磨豆機2台、3M商業淨水、工作檯冰箱、製冰機</td>
+                </tr>
+                <tr class="hover:bg-coffee-50/50 transition">
+                  <td class="py-3 px-5 font-bold text-stone-900 flex items-center space-x-2">
+                    <span class="w-3 h-3 rounded-full bg-[#A67B5B]"></span>
+                    <span>店面輕裝修與吧檯水電</span>
+                  </td>
+                  <td class="py-3 px-4 text-right font-mono font-bold">$260,000</td>
+                  <td class="py-3 px-4 text-center font-semibold text-coffee-700">26.0%</td>
+                  <td class="py-3 px-5 text-xs text-stone-500">人體工學木質吧檯、220V/50A專用迴路、給排水配管、暖色軌道燈、外觀招牌</td>
+                </tr>
+                <tr class="hover:bg-coffee-50/50 transition bg-emerald-50/30">
+                  <td class="py-3 px-5 font-bold text-emerald-900 flex items-center space-x-2">
+                    <span class="w-3 h-3 rounded-full bg-[#E6BA95]"></span>
+                    <span>營運週轉金 (3個月儲備)</span>
+                  </td>
+                  <td class="py-3 px-4 text-right font-mono font-bold text-emerald-700">$150,000</td>
+                  <td class="py-3 px-4 text-center font-semibold text-emerald-700">15.0%</td>
+                  <td class="py-3 px-5 text-xs text-stone-500">維持 3 個月營運流動性儲備、零用週轉金與緊急維修預算</td>
+                </tr>
+                <tr class="hover:bg-coffee-50/50 transition">
+                  <td class="py-3 px-5 font-bold text-stone-900 flex items-center space-x-2">
+                    <span class="w-3 h-3 rounded-full bg-[#C4A482]"></span>
+                    <span>店面押金與首月租金</span>
+                  </td>
+                  <td class="py-3 px-4 text-right font-mono font-bold">$120,000</td>
+                  <td class="py-3 px-4 text-center font-semibold text-coffee-700">12.0%</td>
+                  <td class="py-3 px-5 text-xs text-stone-500">2個月租金押金 ($80,000) + 第1個月預付租金 ($40,000)</td>
+                </tr>
+                <tr class="hover:bg-coffee-50/50 transition">
+                  <td class="py-3 px-5 font-bold text-stone-900 flex items-center space-x-2">
+                    <span class="w-3 h-3 rounded-full bg-[#8C6239]"></span>
+                    <span>首批原物料與品牌包材</span>
+                  </td>
+                  <td class="py-3 px-4 text-right font-mono font-bold">$60,000</td>
+                  <td class="py-3 px-4 text-center font-semibold text-coffee-700">6.0%</td>
+                  <td class="py-3 px-5 text-xs text-stone-500">莊園咖啡豆 60kg、鮮乳與燕麥奶、環保植纖外帶杯、杯蓋、杯套</td>
+                </tr>
+                <tr class="hover:bg-coffee-50/50 transition">
+                  <td class="py-3 px-5 font-bold text-stone-900 flex items-center space-x-2">
+                    <span class="w-3 h-3 rounded-full bg-[#5C4033]"></span>
+                    <span>POS收銀機、牌照與保險</span>
+                  </td>
+                  <td class="py-3 px-4 text-right font-mono font-bold">$50,000</td>
+                  <td class="py-3 px-4 text-center font-semibold text-coffee-700">5.0%</td>
+                  <td class="py-3 px-5 text-xs text-stone-500">iPad雲端POS、出單機、行動刷卡機、公司稅籍登記、公共意外責任險</td>
+                </tr>
+                <tr class="hover:bg-coffee-50/50 transition">
+                  <td class="py-3 px-5 font-bold text-stone-900 flex items-center space-x-2">
+                    <span class="w-3 h-3 rounded-full bg-[#3E2723]"></span>
+                    <span>品牌識別與開幕行銷</span>
+                  </td>
+                  <td class="py-3 px-4 text-right font-mono font-bold">$40,000</td>
+                  <td class="py-3 px-4 text-center font-semibold text-coffee-700">4.0%</td>
+                  <td class="py-3 px-5 text-xs text-stone-500">Logo視覺VI設計、菜單看板製作、商圈IG社群精準廣告、辦公室試飲傳單</td>
+                </tr>
+              </tbody>
+              <tfoot class="bg-coffee-100 font-extrabold text-coffee-900 border-t-2 border-coffee-300">
+                <tr>
+                  <td class="py-3.5 px-5">總資本需求合計</td>
+                  <td class="py-3.5 px-4 text-right font-mono text-base">$1,000,000</td>
+                  <td class="py-3.5 px-4 text-center">100.0%</td>
+                  <td class="py-3.5 px-5 text-xs text-coffee-700">完整到位，無額外隱形成本</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 菜單定價與產品毛利 (Menu & Economics) -->
+  <section id="menu" class="py-16 bg-white border-y border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-xs font-bold text-coffee-600 tracking-wider uppercase mb-2">Menu & Unit Economics</h2>
+        <h3 class="text-3xl font-extrabold text-stone-900">產品線毛利結構表（平均毛利率 74.2%）</h3>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 經典拿鐵 -->
+        <div class="bg-coffee-50/60 rounded-2xl p-5 border border-coffee-200/80 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-coffee-200 text-coffee-900">銷售主力 (40%)</span>
+              <span class="text-xs font-mono font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">毛利 72.6%</span>
+            </div>
+            <h4 class="text-lg font-bold text-stone-900">經典拿鐵 (Cafe Latte)</h4>
+            <p class="text-xs text-stone-500 mt-1">頂級鮮乳結合堅果黑巧克力中深焙配方豆</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-coffee-200 flex items-baseline justify-between">
+            <span class="text-xs text-stone-500">食材成本: $26</span>
+            <span class="text-xl font-black text-coffee-900 font-mono">NT$ 95</span>
+          </div>
+        </div>
+
+        <!-- 招牌美式 -->
+        <div class="bg-coffee-50/60 rounded-2xl p-5 border border-coffee-200/80 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-coffee-200 text-coffee-900">晨間高頻 (25%)</span>
+              <span class="text-xs font-mono font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">毛利 78.7%</span>
+            </div>
+            <h4 class="text-lg font-bold text-stone-900">配方美式 (Americano)</h4>
+            <p class="text-xs text-stone-500 mt-1">乾淨爽口，焦糖柑橘尾韻，上班族回購首選</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-coffee-200 flex items-baseline justify-between">
+            <span class="text-xs text-stone-500">食材成本: $16</span>
+            <span class="text-xl font-black text-coffee-900 font-mono">NT$ 75</span>
+          </div>
+        </div>
+
+        <!-- 燕麥奶 Flat White -->
+        <div class="bg-coffee-50/60 rounded-2xl p-5 border border-coffee-200/80 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-amber-200 text-amber-900">植物奶升級</span>
+              <span class="text-xs font-mono font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">毛利 73.3%</span>
+            </div>
+            <h4 class="text-lg font-bold text-stone-900">燕麥奶馥芮白 (Flat White)</h4>
+            <p class="text-xs text-stone-500 mt-1">咖啡師特調燕麥奶，雙倍濃縮極致絲滑</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-coffee-200 flex items-baseline justify-between">
+            <span class="text-xs text-stone-500">食材成本: $32</span>
+            <span class="text-xl font-black text-coffee-900 font-mono">NT$ 120</span>
+          </div>
+        </div>
+
+        <!-- 單品手沖與冷萃 -->
+        <div class="bg-coffee-50/60 rounded-2xl p-5 border border-coffee-200/80 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-purple-100 text-purple-900">精品客群</span>
+              <span class="text-xs font-mono font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">毛利 78.5%</span>
+            </div>
+            <h4 class="text-lg font-bold text-stone-900">莊園單品手沖 (Hand Drip)</h4>
+            <p class="text-xs text-stone-500 mt-1">衣索比亞耶加雪菲 / 哥倫比亞藝妓特選批次</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-coffee-200 flex items-baseline justify-between">
+            <span class="text-xs text-stone-500">食材成本: $28</span>
+            <span class="text-xl font-black text-coffee-900 font-mono">NT$ 130</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 營運支出與損益兩平 (OPEX & Break-Even) -->
+  <section id="opex" class="py-16 bg-[#FBF9F5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-10">
+
+        <!-- 左欄：月支出分析 -->
+        <div class="lg:col-span-6 space-y-6">
+          <div>
+            <h2 class="text-xs font-bold text-coffee-600 tracking-wider uppercase mb-2">Monthly OPEX</h2>
+            <h3 class="text-3xl font-extrabold text-stone-900">月常態營運支出（NT$ 207,000/月）</h3>
+          </div>
+
+          <div class="bg-white p-6 rounded-3xl border border-stone-200 shadow-sm space-y-4">
+            <div class="flex items-center justify-between py-2 border-b border-stone-100">
+              <div class="flex items-center space-x-3">
+                <i data-lucide="home" class="w-5 h-5 text-coffee-600"></i>
+                <span class="font-medium text-stone-700">店面租金 (10–12坪 商圈一線/二線角窗)</span>
+              </div>
+              <span class="font-mono font-bold text-stone-900">$40,000</span>
+            </div>
+            <div class="flex items-center justify-between py-2 border-b border-stone-100">
+              <div class="flex items-center space-x-3">
+                <i data-lucide="user-check" class="w-5 h-5 text-coffee-600"></i>
+                <span class="font-medium text-stone-700">店長/創辦人正職薪資 (自營全職 48hr/週)</span>
+              </div>
+              <span class="font-mono font-bold text-stone-900">$45,000</span>
+            </div>
+            <div class="flex items-center justify-between py-2 border-b border-stone-100">
+              <div class="flex items-center space-x-3">
+                <i data-lucide="users" class="w-5 h-5 text-coffee-600"></i>
+                <span class="font-medium text-stone-700">兼職咖啡師時薪 (晨間高峰時段 100小時)</span>
+              </div>
+              <span class="font-mono font-bold text-stone-900">$20,000</span>
+            </div>
+            <div class="flex items-center justify-between py-2 border-b border-stone-100">
+              <div class="flex items-center space-x-3">
+                <i data-lucide="zap" class="w-5 h-5 text-coffee-600"></i>
+                <span class="font-medium text-stone-700">營業水電瓦斯網路 (雙鍋爐義式機高耗電)</span>
+              </div>
+              <span class="font-mono font-bold text-stone-900">$14,000</span>
+            </div>
+            <div class="flex items-center justify-between py-2 border-b border-stone-100">
+              <div class="flex items-center space-x-3">
+                <i data-lucide="package" class="w-5 h-5 text-coffee-600"></i>
+                <span class="font-medium text-stone-700">月食材與包材原物料 (以月銷 3,000 杯基準)</span>
+              </div>
+              <span class="font-mono font-bold text-stone-900">$75,000</span>
+            </div>
+            <div class="flex items-center justify-between py-2">
+              <div class="flex items-center space-x-3">
+                <i data-lucide="sliders" class="w-5 h-5 text-coffee-600"></i>
+                <span class="font-medium text-stone-700">社群行銷廣告、POS雲端軟體、維護雜支</span>
+              </div>
+              <span class="font-mono font-bold text-stone-900">$13,000</span>
+            </div>
+            <div class="pt-4 border-t-2 border-coffee-200 flex items-center justify-between text-lg font-black text-coffee-900">
+              <span>每月營運支出總計</span>
+              <span class="font-mono">NT$ 207,000</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右欄：損益兩平核心算式 -->
+        <div class="lg:col-span-6 space-y-6">
+          <div>
+            <h2 class="text-xs font-bold text-coffee-600 tracking-wider uppercase mb-2">Break-Even Analysis</h2>
+            <h3 class="text-3xl font-extrabold text-stone-900">損益兩平安全邊際</h3>
+          </div>
+
+          <div class="bg-white p-7 rounded-3xl border border-stone-200 shadow-sm flex flex-col justify-between space-y-6">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-coffee-50 p-4 rounded-2xl border border-coffee-100">
+                <span class="text-xs text-stone-500 block mb-1">平均客單價 (ASP)</span>
+                <span class="text-2xl font-black text-coffee-900 font-mono">NT$ 100</span>
+              </div>
+              <div class="bg-coffee-50 p-4 rounded-2xl border border-coffee-100">
+                <span class="text-xs text-stone-500 block mb-1">平均每杯食材成本</span>
+                <span class="text-2xl font-black text-stone-700 font-mono">NT$ 25</span>
+              </div>
+              <div class="bg-coffee-50 p-4 rounded-2xl border border-coffee-100">
+                <span class="text-xs text-stone-500 block mb-1">每杯邊際貢獻 (Margin)</span>
+                <span class="text-2xl font-black text-emerald-700 font-mono">NT$ 75</span>
+              </div>
+              <div class="bg-coffee-50 p-4 rounded-2xl border border-coffee-100">
+                <span class="text-xs text-stone-500 block mb-1">每月固定成本 (Fixed)</span>
+                <span class="text-2xl font-black text-coffee-900 font-mono">NT$ 13.2 萬</span>
+              </div>
+            </div>
+
+            <!-- 公式展示區塊 -->
+            <div class="p-5 rounded-2xl bg-stone-900 text-white space-y-3 font-mono text-sm">
+              <div class="text-xs text-stone-400 font-sans font-semibold">★ 損益兩平公式推導：</div>
+              <div class="text-amber-400">
+                月損益兩平杯數 = 固定成本 ÷ 邊際貢獻<br>
+                = $132,000 ÷ $75 = 1,760 杯 / 月
+              </div>
+              <div class="text-emerald-400 font-bold border-t border-stone-800 pt-2 text-base">
+                每日損益兩平銷量 (月營運26天) = 68 杯 / 天
+              </div>
+            </div>
+
+            <p class="text-xs text-stone-500 leading-relaxed">
+              * 只要在平日早晨通勤 2 小時高峰期達成 40 杯、午間離峰期達成 28 杯，即可達到零虧損安全線，其餘時段皆為純利增長區間。
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 3年財務模型走勢圖 (Projections) -->
+  <section id="projections" class="py-16 bg-white border-y border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <h2 class="text-xs font-bold text-coffee-600 tracking-wider uppercase mb-2">3-Year Growth Model</h2>
+          <h3 class="text-3xl font-extrabold text-stone-900">三年營收與淨利擴張走勢預測</h3>
+        </div>
+        <div class="mt-4 md:mt-0 flex items-center space-x-3 text-xs font-semibold">
+          <span class="flex items-center space-x-1.5"><span class="w-3 h-3 rounded-full bg-[#6F4E37]"></span><span>營業收入</span></span>
+          <span class="flex items-center space-x-1.5"><span class="w-3 h-3 rounded-full bg-[#C4A482]"></span><span>營運費用</span></span>
+          <span class="flex items-center space-x-1.5"><span class="w-3 h-3 rounded-full bg-[#2E7D32]"></span><span>淨利 (Net Profit)</span></span>
+        </div>
+      </div>
+
+      <!-- 圖表區塊 -->
+      <div class="bg-coffee-50/50 p-6 sm:p-8 rounded-3xl border border-coffee-100 shadow-sm mb-10">
+        <div class="w-full h-80 sm:h-96">
+          <canvas id="projectionChart"></canvas>
+        </div>
+      </div>
+
+      <!-- 三年綜合損益表 -->
+      <div class="bg-white rounded-3xl border border-stone-200 shadow-sm overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-coffee-800 text-white font-semibold">
+              <tr>
+                <th class="py-3.5 px-6">綜合財務指標 (NTD)</th>
+                <th class="py-3.5 px-6 text-right">第一年 (Year 1)</th>
+                <th class="py-3.5 px-6 text-right">第二年 (Year 2)</th>
+                <th class="py-3.5 px-6 text-right">第三年 (Year 3)</th>
+                <th class="py-3.5 px-6">成長驅動與策略說明</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-stone-100 text-stone-700">
+              <tr>
+                <td class="py-3 px-6 font-medium">預估日均出杯量</td>
+                <td class="py-3 px-6 text-right font-mono font-bold">115 杯/天</td>
+                <td class="py-3 px-6 text-right font-mono font-bold">144 杯/天</td>
+                <td class="py-3 px-6 text-right font-mono font-bold">173 杯/天</td>
+                <td class="py-3 px-6 text-xs text-stone-500">熟客回流 (+25%) 與企業外送滲透 (+20%)</td>
+              </tr>
+              <tr class="bg-stone-50/50">
+                <td class="py-3.5 px-6 font-bold text-stone-900">年度營業總收入</td>
+                <td class="py-3.5 px-6 text-right font-mono font-black text-coffee-900">$3,588,000</td>
+                <td class="py-3.5 px-6 text-right font-mono font-black text-coffee-900">$4,492,800</td>
+                <td class="py-3.5 px-6 text-right font-mono font-black text-coffee-900">$5,397,600</td>
+                <td class="py-3.5 px-6 text-xs text-stone-500">以年營運 312 天 (週休一日) 計算</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-6 font-medium">營業成本 (COGS @ 25%)</td>
+                <td class="py-3 px-6 text-right font-mono">$897,000</td>
+                <td class="py-3 px-6 text-right font-mono">$1,123,200</td>
+                <td class="py-3 px-6 text-right font-mono">$1,349,400</td>
+                <td class="py-3 px-6 text-xs text-stone-500">鎖定半年期莊園豆合約，原物料成本受控</td>
+              </tr>
+              <tr class="bg-coffee-50/50">
+                <td class="py-3.5 px-6 font-bold text-stone-900">毛利潤 (Gross Profit)</td>
+                <td class="py-3.5 px-6 text-right font-mono font-bold text-coffee-800">$2,691,000</td>
+                <td class="py-3.5 px-6 text-right font-mono font-bold text-coffee-800">$3,369,600</td>
+                <td class="py-3.5 px-6 text-right font-mono font-bold text-coffee-800">$4,048,200</td>
+                <td class="py-3.5 px-6 text-xs text-emerald-700 font-semibold">毛利率維持 75.0% 穩健水準</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-6 font-medium">年度營運費用 (OPEX)</td>
+                <td class="py-3 px-6 text-right font-mono">$1,920,000</td>
+                <td class="py-3 px-6 text-right font-mono">$2,155,000</td>
+                <td class="py-3 px-6 text-right font-mono">$2,370,000</td>
+                <td class="py-3 px-6 text-xs text-stone-500">含創辦人管理工資、店員時薪、店租、水電行銷</td>
+              </tr>
+              <tr class="bg-emerald-50 text-emerald-950 font-black">
+                <td class="py-4 px-6 text-base">營業淨利 (EBIT)</td>
+                <td class="py-4 px-6 text-right font-mono text-base">$771,000</td>
+                <td class="py-4 px-6 text-right font-mono text-base">$1,214,600</td>
+                <td class="py-4 px-6 text-right font-mono text-base">$1,678,200</td>
+                <td class="py-4 px-6 text-xs font-semibold text-emerald-800">淨利率 21.5% ➜ 27.0% ➜ 31.1% 規模效應遞增</td>
+              </tr>
+              <tr class="bg-amber-50/60 text-amber-900 font-bold border-t border-amber-200">
+                <td class="py-3.5 px-6">累積現金流 (Cumulative)</td>
+                <td class="py-3.5 px-6 text-right font-mono">$771,000</td>
+                <td class="py-3.5 px-6 text-right font-mono">$1,985,600</td>
+                <td class="py-3.5 px-6 text-right font-mono">$3,663,800</td>
+                <td class="py-3.5 px-6 text-xs text-amber-800">第 15 個月達成完全回本，資金充裕可拓二店</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 即時動態模擬器 (Interactive Simulator) -->
+  <section id="simulator" class="py-16 bg-[#FBF9F5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-3">
+          <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+          <span>互動式財務試算工具</span>
+        </div>
+        <h3 class="text-3xl font-extrabold text-stone-900">即時出杯量與客單價損益試算器</h3>
+        <p class="text-sm text-stone-500 mt-2">拉動下方滑桿，即時計算你的咖啡店在不同出杯量與客單價下的月營收、月淨利與損益狀態。</p>
+      </div>
+
+      <div class="bg-white rounded-3xl border border-stone-200 shadow-lg p-6 sm:p-10 max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          
+          <!-- 滑桿 1：每日出杯量 -->
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <label for="cupsRange" class="text-sm font-bold text-stone-700">每日出杯量 (Cups/Day)</label>
+              <span id="cupsVal" class="text-lg font-black text-coffee-800 font-mono">115 杯</span>
+            </div>
+            <input type="range" id="cupsRange" min="40" max="250" value="115" step="5" class="w-full accent-coffee-700 h-2 bg-stone-200 rounded-lg cursor-pointer">
+            <div class="flex justify-between text-xs text-stone-400">
+              <span>保守 (40杯)</span>
+              <span class="text-emerald-600 font-bold">損益平衡點 (68杯)</span>
+              <span>爆滿 (250杯)</span>
+            </div>
+          </div>
+
+          <!-- 滑桿 2：平均客單價 -->
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <label for="priceRange" class="text-sm font-bold text-stone-700">平均客單價 (ASP)</label>
+              <span id="priceVal" class="text-lg font-black text-coffee-800 font-mono">NT$ 100</span>
+            </div>
+            <input type="range" id="priceRange" min="70" max="150" value="100" step="5" class="w-full accent-coffee-700 h-2 bg-stone-200 rounded-lg cursor-pointer">
+            <div class="flex justify-between text-xs text-stone-400">
+              <span>低價策略 ($70)</span>
+              <span>基準定價 ($100)</span>
+              <span>高單品佔比 ($150)</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 試算即時結果卡片 -->
+        <div class="grid sm:grid-cols-3 gap-4 pt-6 border-t border-stone-200">
+          <div class="p-5 rounded-2xl bg-stone-50 border border-stone-200/80 text-center">
+            <span class="text-xs text-stone-500 font-semibold block mb-1">預估月總營收 (月26天)</span>
+            <span id="resRevenue" class="text-2xl font-black text-stone-900 font-mono">NT$ 299,000</span>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-stone-50 border border-stone-200/80 text-center">
+            <span class="text-xs text-stone-500 font-semibold block mb-1">食材變動成本 (25%)</span>
+            <span id="resCogs" class="text-2xl font-black text-stone-700 font-mono">NT$ 74,750</span>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 text-center">
+            <span class="text-xs text-emerald-800 font-semibold block mb-1">預估每月淨利潤 (EBIT)</span>
+            <span id="resProfit" class="text-2xl font-black text-emerald-700 font-mono">NT$ +92,250</span>
+          </div>
+        </div>
+
+        <div id="simStatus" class="mt-6 p-4 rounded-xl text-center text-xs font-bold text-emerald-800 bg-emerald-100/70 border border-emerald-200">
+          狀態：高於損益兩平門檻 47 杯/天，經營狀態非常健康，具備充沛現金流！
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 12 週開店時程表 (Roadmap) -->
+  <section class="py-16 bg-white border-t border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="text-xs font-bold text-coffee-600 tracking-wider uppercase mb-2">Execution Roadmap</h2>
+        <h3 class="text-3xl font-extrabold text-stone-900">12 週開店執行藍圖</h3>
+      </div>
+
+      <div class="relative border-l-2 border-coffee-200 ml-4 md:ml-32 space-y-10 pl-6 md:pl-10">
+        <div class="relative group">
+          <div class="absolute -left-[31px] md:-left-[47px] top-1 w-6 h-6 rounded-full bg-coffee-800 text-white flex items-center justify-center text-xs font-bold">1</div>
+          <div class="bg-coffee-50 p-5 rounded-2xl border border-coffee-100 max-w-2xl">
+            <span class="text-xs font-bold text-coffee-700 uppercase">第 1 – 2 週</span>
+            <h4 class="text-base font-bold text-stone-900 mt-1">選址評估、簽署租約與公司設立</h4>
+            <p class="text-xs text-stone-600 mt-1">完成商圈通勤人流測速、簽署店面租約（付2押1租）、向經發局申請商業登記與稅籍立案。</p>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <div class="absolute -left-[31px] md:-left-[47px] top-1 w-6 h-6 rounded-full bg-coffee-700 text-white flex items-center justify-center text-xs font-bold">2</div>
+          <div class="bg-coffee-50 p-5 rounded-2xl border border-coffee-100 max-w-2xl">
+            <span class="text-xs font-bold text-coffee-700 uppercase">第 3 – 5 週</span>
+            <h4 class="text-base font-bold text-stone-900 mt-1">吧檯木作、220V電路配線與3M淨水配置</h4>
+            <p class="text-xs text-stone-600 mt-1">施作符合人體工學之外帶吧檯，鋪設雙孔義式機專用 220V/50A 迴路與高流速排水管道。</p>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <div class="absolute -left-[31px] md:-left-[47px] top-1 w-6 h-6 rounded-full bg-coffee-600 text-white flex items-center justify-center text-xs font-bold">3</div>
+          <div class="bg-coffee-50 p-5 rounded-2xl border border-coffee-100 max-w-2xl">
+            <span class="text-xs font-bold text-coffee-700 uppercase">第 6 – 7 週</span>
+            <h4 class="text-base font-bold text-stone-900 mt-1">設備進場校正、萃取配方杯測定錨</h4>
+            <p class="text-xs text-stone-600 mt-1">義式機、磨豆機、製冰機定位；測試水質 TDS，校正濃縮萃取率 (EY 19–21%) 與蒸奶溫度標準。</p>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <div class="absolute -left-[31px] md:-left-[47px] top-1 w-6 h-6 rounded-full bg-coffee-500 text-white flex items-center justify-center text-xs font-bold">4</div>
+          <div class="bg-coffee-50 p-5 rounded-2xl border border-coffee-100 max-w-2xl">
+            <span class="text-xs font-bold text-coffee-700 uppercase">第 8 – 10 週</span>
+            <h4 class="text-base font-bold text-stone-900 mt-1">包材到貨、POS行動支付串接與人員培訓</h4>
+            <p class="text-xs text-stone-600 mt-1">外帶杯與提袋到位，測試 LINE Pay / Apple Pay 刷卡通道，培訓計時咖啡師達到 90 秒極速出杯。</p>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <div class="absolute -left-[31px] md:-left-[47px] top-1 w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-bold">5</div>
+          <div class="bg-emerald-50 p-5 rounded-2xl border border-emerald-200 max-w-2xl">
+            <span class="text-xs font-bold text-emerald-800 uppercase">第 11 – 12 週</span>
+            <h4 class="text-base font-bold text-emerald-950 mt-1">試營運壓力測試 ➜ 正式盛大開幕 (Grand Opening)</h4>
+            <p class="text-xs text-emerald-900 mt-1">針對周圍 5 棟辦公大樓發送 200 張免費試飲券，啟動 LINE 官方帳號集點，盛大開幕！</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 頁尾 (Footer) -->
+  <footer class="bg-stone-900 text-stone-400 py-12 text-sm border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center space-x-3">
+        <img src="logo.jpg" alt="Logo" class="w-8 h-8 rounded-lg object-contain bg-white p-0.5">
+        <span class="text-white font-bold">Artisan Brew & Co. 精品外帶咖啡小館</span>
+      </div>
+      <div class="flex space-x-6">
+        <a href="https://docs.google.com/document/d/1Nri3kQFaBQLcrsEg4tCaLlyQsFmJt0x53TESfDCJF98/edit" target="_blank" class="text-stone-300 hover:text-white transition">Google Docs 企劃書</a>
+        <a href="https://docs.google.com/spreadsheets/d/1x3MzQVA7E-mlysZBrX5PtroR-QjWJeGR_L6nnHDBGeo/edit" target="_blank" class="text-stone-300 hover:text-white transition">Google Sheets 財務模型</a>
+        <a href="javascript:window.print()" class="text-stone-300 hover:text-white transition">列印/存為 PDF</a>
+      </div>
+      <div class="text-xs text-stone-500">
+        © 2026 Artisan Brew & Co. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- 圖表與互動模擬器腳本 -->
+  <script>
+    lucide.createIcons();
+
+    // 1. 預算分配甜甜圈圖
+    const ctxBudget = document.getElementById('budgetChart').getContext('2d');
+    new Chart(ctxBudget, {
+      type: 'doughnut',
+      data: {
+        labels: [
+          '咖啡機具設備 (32%)',
+          '裝修吧檯水電 (26%)',
+          '營運週轉金 (15%)',
+          '租金與押金 (12%)',
+          '首批物料包材 (6%)',
+          'POS/牌照保險 (5%)',
+          '品牌與行銷 (4%)'
+        ],
+        datasets: [{
+          data: [320000, 260000, 150000, 120000, 60000, 50000, 40000],
+          backgroundColor: [
+            '#6F4E37',
+            '#A67B5B',
+            '#E6BA95',
+            '#C4A482',
+            '#8C6239',
+            '#5C4033',
+            '#3E2723'
+          ],
+          borderWidth: 2,
+          borderColor: '#FFFFFF'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { font: { size: 11 }, boxWidth: 12 }
+          }
+        },
+        cutout: '65%'
+      }
+    });
+
+    // 2. 三年營收與淨利走勢柱狀圖 + 折線圖
+    const ctxProj = document.getElementById('projectionChart').getContext('2d');
+    new Chart(ctxProj, {
+      data: {
+        labels: ['第一年 (Year 1)', '第二年 (Year 2)', '第三年 (Year 3)'],
+        datasets: [
+          {
+            type: 'bar',
+            label: '營業收入 (NT$)',
+            data: [3588000, 4492800, 5397600],
+            backgroundColor: '#6F4E37',
+            borderRadius: 8
+          },
+          {
+            type: 'bar',
+            label: '營運費用 (NT$)',
+            data: [1920000, 2155000, 2370000],
+            backgroundColor: '#C4A482',
+            borderRadius: 8
+          },
+          {
+            type: 'line',
+            label: '營業淨利 (EBIT)',
+            data: [771000, 1214600, 1678200],
+            borderColor: '#2E7D32',
+            backgroundColor: '#2E7D32',
+            borderWidth: 3,
+            tension: 0.3,
+            fill: false,
+            pointRadius: 6,
+            pointHoverRadius: 8
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            ticks: {
+              callback: function(val) { return 'NT$ ' + (val/10000) + '萬'; }
+            },
+            grid: { color: '#F0ECE6' }
+          },
+          x: {
+            grid: { display: false }
+          }
+        },
+        plugins: {
+          legend: { position: 'top' }
+        }
+      }
+    });
+
+    // 3. 即時損益兩平試算器交互邏輯
+    const cupsRange = document.getElementById('cupsRange');
+    const priceRange = document.getElementById('priceRange');
+    const cupsVal = document.getElementById('cupsVal');
+    const priceVal = document.getElementById('priceVal');
+    const resRevenue = document.getElementById('resRevenue');
+    const resCogs = document.getElementById('resCogs');
+    const resProfit = document.getElementById('resProfit');
+    const simStatus = document.getElementById('simStatus');
+
+    const fixedCosts = 132000; // 每月固定成本
+    const cogsRatio = 0.25;    // 食材包材比例 25%
+    const days = 26;           // 每月營運天數
+
+    function updateSimulation() {
+      const cups = parseInt(cupsRange.value);
+      const price = parseInt(priceRange.value);
+
+      cupsVal.innerText = cups + ' 杯';
+      priceVal.innerText = 'NT$ ' + price;
+
+      const monthlyRev = cups * days * price;
+      const monthlyCogs = monthlyRev * cogsRatio;
+      const monthlyProfit = monthlyRev - monthlyCogs - fixedCosts;
+      const beCups = Math.ceil(fixedCosts / (price * (1 - cogsRatio)) / days);
+
+      resRevenue.innerText = 'NT$ ' + monthlyRev.toLocaleString();
+      resCogs.innerText = 'NT$ ' + Math.round(monthlyCogs).toLocaleString();
+
+      if (monthlyProfit >= 0) {
+        resProfit.innerText = 'NT$ +' + Math.round(monthlyProfit).toLocaleString();
+        resProfit.className = 'text-2xl font-black text-emerald-700 font-mono';
+        simStatus.className = 'mt-6 p-4 rounded-xl text-center text-xs font-bold text-emerald-800 bg-emerald-100/70 border border-emerald-200';
+        simStatus.innerText = '狀態：高於損益兩平門檻 (' + beCups + ' 杯/天)，經營狀態非常健康，每月可獲利約 NT$ ' + Math.round(monthlyProfit).toLocaleString() + '！';
+      } else {
+        resProfit.innerText = 'NT$ ' + Math.round(monthlyProfit).toLocaleString();
+        resProfit.className = 'text-2xl font-black text-rose-600 font-mono';
+        simStatus.className = 'mt-6 p-4 rounded-xl text-center text-xs font-bold text-rose-800 bg-rose-100/70 border border-rose-200';
+        simStatus.innerText = '狀態：低於每日損益兩平點 (' + beCups + ' 杯/天)，建議加強晨間預約外帶或推動辦公室團購提升銷量！';
+      }
+    }
+
+    cupsRange.addEventListener('input', updateSimulation);
+    priceRange.addEventListener('input', updateSimulation);
+    updateSimulation();
+  </script>
+</body>
+</html>
